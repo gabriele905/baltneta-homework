@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import SignupForm, LoginForm
+from ..middlewares.login import login_exempt
 
 
 # signup page
+@login_exempt
 def user_signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -16,6 +18,7 @@ def user_signup(request):
 
 
 # login page
+@login_exempt
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
