@@ -3,11 +3,6 @@ from django.contrib.auth import authenticate, login, logout
 from .forms import SignupForm, LoginForm
 
 
-# Home page
-def index(request):
-    return render(request, 'index.html')
-
-
 # signup page
 def user_signup(request):
     if request.method == 'POST':
