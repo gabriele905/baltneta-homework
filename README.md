@@ -1,5 +1,10 @@
 # baltneta-homework
 
+## Superuser:
+username: `superuser` \
+password: `superuserpassword` \
+email: `supersuer@superuser.com`
+
 ### Initialize virtual environment:
 ```
 python3 -m venv venv
