@@ -3,6 +3,8 @@ from django.shortcuts import render
 
 from .forms import UploadFileForm
 
+def list(request):
+    return render(request, 'list_categories.html', {'object_list': Category.objects.all()})
 
 def upload_file(request):
     if request.method == 'POST':
