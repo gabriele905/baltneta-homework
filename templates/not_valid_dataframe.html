@@ -1,0 +1,25 @@
+<a href="{% url 'home' %}">Return to home</a>
+<a href="{% url 'list_categories' %}">List categories</a>
+<a href="{% url 'upload_categories' %}">Upload categories</a>
+{% if message %}
+    <h4>{{ message }}</h4>
+{% endif %}
+
+<table border="1">
+  <tr>
+    {% for col in df.columns %}
+      <td>
+        {{col}}
+      </td>
+    {% endfor %}
+  </tr>
+    {% for index, row in df.iterrows %}
+      <tr>
+        {% for cell in row %}
+          <td>
+            {{cell}}
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+</table>

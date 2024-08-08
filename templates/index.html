@@ -10,6 +10,8 @@
     {% if request.user.is_authenticated %}
         <p>{{ request.user.username }}</p>
         <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'list_categories' %}">List categories</a>
+        <a href="{% url 'upload_categories' %}">Upload categories</a>
     {% else %}
         <a href="{% url 'login' %}">Login</a>
         <a href="{% url 'signup' %}">Signup</a>

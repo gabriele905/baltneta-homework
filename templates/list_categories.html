@@ -1,0 +1,26 @@
+<a href="{% url 'home' %}">Return to home</a>
+<a href="{% url 'upload_categories' %}">Upload categories</a>
+{% if object_list %}
+    <table border="1">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Number</th>
+            <th>Date</th>
+            <th>User</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for category in object_list %}
+            <tr>
+                <td>{{ category.category }}</td>
+                <td>{{ category.number }}</td>
+                <td>{{ category.create_date }}</td>
+                <td>{{ category.create_user }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% else %}
+    <h3>No data.</h3>
+{% endif %}
